@@ -1,0 +1,38 @@
+@startuml
+
+class Escuela{
+	int cantidadAsignaciones
+	Asignacion[] asignacion
+	addAsignacion()
+	mostrarAsignaciones()
+}
+
+
+class Asignacion{
+	Double [] notas
+	Alumno alumno
+	Materia materia
+	promediarNotas()
+	estadoMateria(promediarNotas())
+}
+
+
+class Alumno{
+	String nombre
+	int edad
+}
+
+
+class Materia{
+	String nombreMateria
+	String cuantrimestre
+}
+
+
+Escuela -- Asignacion
+Asignacion -- Materia
+Asignacion -- Alumno
+
+
+
+@enduml
