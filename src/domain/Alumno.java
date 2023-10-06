@@ -19,7 +19,7 @@ public class Alumno {
 
 	@Override
 	public String toString() {
-		return "Alumno [nombre=" + nombre + ", edad=" + edad + "]";
+		return nombre + " (" + edad + " años)";
 	}
 
 }

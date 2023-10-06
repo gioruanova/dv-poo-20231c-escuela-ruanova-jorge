@@ -3,44 +3,39 @@ package domain;
 import java.util.Arrays;
 
 public class Escuela {
+
+	private static final int CANTIDAD_ASIGNACIONES_DEFAULT = 4;
+	private String nombreEscuela;
 	private Asignacion[] asignaciones;
 	private int cantidadAsignaciones;
 
-	public Escuela(int capacidad) {
-		asignaciones = new Asignacion[capacidad];
-		cantidadAsignaciones = 0;
+	public Escuela() {
+		this.asignaciones = new Asignacion[CANTIDAD_ASIGNACIONES_DEFAULT];
+		this.cantidadAsignaciones = 0;
+
+	}
+
+	public Escuela(int capacidad, String nombreEscuela) {
+		this();
+		this.asignaciones = new Asignacion[capacidad];
+		this.cantidadAsignaciones = 0;
+		this.nombreEscuela = nombreEscuela;
 	}
 
 	public void agregarAsignacion(Asignacion asignacion) {
+
 		if (cantidadAsignaciones < asignaciones.length) {
 			asignaciones[cantidadAsignaciones] = asignacion;
 			cantidadAsignaciones++;
+
 		} else {
-			System.out.println("No se pueden agregar más asignaciones, capacidad máxima alcanzada.");
-		}
-	}
-
-
-	
-	public void mostrarEstadoAsignaciones() {
-		for (int i = 0; i < cantidadAsignaciones; i++) {
-			Asignacion asignacion = asignaciones[i];
-			System.out.println("Alumno: " + asignacion.getAlumno().getNombre());
-			System.out.println("Materia: " + asignacion.getMateria().getNombre());
-			System.out.println("Cuatrimestre: " + asignacion.getMateria().getCuatrimestre());
-			System.out.println("Parcial 1=" + asignacion.getPrimerParcial() + ", Parcial 2="
-					+ asignacion.getSegundoParcial() + ", TP=" + asignacion.getTrabajoPractico());
-			System.out.println("Promedio: " + asignacion.getPromedio());
-			System.out.println("Estado: " + asignacion.getEstado());
-			System.out.println();
+			System.out.println("Nro Asignaciones máxima alcanzada(" + cantidadAsignaciones + ").");
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Escuela [asignaciones=" + Arrays.toString(asignaciones) + ", cantidadAsignaciones="
-				+ cantidadAsignaciones + "]";
+		return "Escuela: " + nombreEscuela + Arrays.toString(asignaciones);
 	}
-		
 
 }

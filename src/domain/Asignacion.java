@@ -16,6 +16,7 @@ public class Asignacion {
 		this.primerParcial = primerParcial;
 		this.segundoParcial = segundoParcial;
 		this.trabajoPractico = trabajoPractico;
+	
 	}
 
 	public Materia getMateria() {
@@ -26,7 +27,7 @@ public class Asignacion {
 		return alumno;
 	}
 
-	public double getPromedio() {
+	public double promediarNotas() {
 		return (primerParcial + segundoParcial + trabajoPractico) / 3.0;
 	}
 
@@ -54,15 +55,20 @@ public class Asignacion {
 		this.trabajoPractico = trabajoPractico;
 	}
 
-	public String getEstado() {
-		double promedio = getPromedio();
+	public String estadoMateria() {
+		double promedio = promediarNotas();
 		return promedio >= 6.0 ? "Aprobado" : "Reprobadod";
+	}
+
+	public String mostrarAlumno() {
+		return alumno.getNombre();
 	}
 
 	@Override
 	public String toString() {
-		return "Asignacion [materia=" + materia + ", alumno=" + alumno + ", primerParcial=" + primerParcial
-				+ ", segundoParcial=" + segundoParcial + ", trabajoPractico=" + trabajoPractico + "]";
+		return "\n" + "\n" + "Asignacion: " + "\nAlumno: " + alumno + "\nMateria: " + materia + "\nNotas: "
+				+ getPrimerParcial() + " - " + getSegundoParcial() + " - " + getTrabajoPractico() + "\nPromedio: "
+				+ promediarNotas() + "\nEstado: " + estadoMateria();
 	}
 
 }

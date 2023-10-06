@@ -1,19 +1,24 @@
 @startuml
 
 class Escuela{
-	int cantidadAsignaciones
-	Asignacion[] asignacion
-	addAsignacion()
-	mostrarAsignaciones()
+	 String nombreEscuela
+	 Asignacion[] asignaciones
+	 int cantidadAsignaciones
+	 
+	 agregarAsignacion()
+	 mostrarAsignaciones()
 }
 
 
 class Asignacion{
-	Double [] notas
-	Alumno alumno
-	Materia materia
-	promediarNotas()
-	estadoMateria(promediarNotas())
+	 Materia materia
+	 Alumno alumno
+	 double primerParcial
+	 double segundoParcial
+	 double trabajoPractico
+	 estadoMateria()
+	 mostrarAlumno(
+	 promediarNotas()
 }
 
 
