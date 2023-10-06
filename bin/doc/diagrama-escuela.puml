@@ -1,10 +1,10 @@
 @startuml
 
 class Escuela{
+	 int CANTIDAD_ASIGNACIONES_DEFAULT
 	 String nombreEscuela
 	 Asignacion[] asignaciones
-	 int cantidadAsignaciones
-	 
+	 	 
 	 agregarAsignacion()
 	 mostrarAsignaciones()
 }
