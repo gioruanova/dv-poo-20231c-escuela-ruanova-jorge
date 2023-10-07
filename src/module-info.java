@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author Giorgio
+ * @author Jorge Ruanova
  *
  */
 module ejercicioEscuela {
