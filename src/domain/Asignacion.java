@@ -25,29 +25,29 @@ package domain;
 public class Asignacion {
 
 	// ATRIBUTOS-------------------------------------------
-	private static final int CANTIDAD_NOTAS = 3;
+	private static final int CANTIDAD_NOTAS_DEFAULT = 3;
+
 	private Materia materia;
 	private Alumno alumno;
 	private Notas[] notas;
+
 	// Atributo adicional para mejorar programa
 	// private String validadorNotas = "";
 
 	public Asignacion(Materia materia, Alumno alumno) {
 		this.materia = materia;
 		this.alumno = alumno;
-		this.notas = new Notas[CANTIDAD_NOTAS];
+		this.notas = new Notas[CANTIDAD_NOTAS_DEFAULT];
 	}
 
 	// METODOS-------------------------------------------
 	// Asignar notas a materia
 	public void asginarNotas(Notas[] notas) {
-
 		for (int i = 0; i < notas.length; i++) {
 			if (notas[i] != null) {
 				this.notas[i] = notas[i];
 			} else {
 				this.notas[i] = null;
-
 			}
 		}
 	}
@@ -60,7 +60,6 @@ public class Asignacion {
 	public Double promediarNotas() {
 		Double suma = 0.0;
 		int contadorNotasValidas = 0;
-
 		for (Notas nota : notas) {
 			if (nota != null && nota.getValorNota() != null) {
 				suma += nota.getValorNota();
@@ -72,11 +71,9 @@ public class Asignacion {
 			// creadas)";
 			// }
 		}
-
 		if (contadorNotasValidas == 0) {
 			return null;
 		}
-
 		return suma / contadorNotasValidas;
 	}
 
@@ -115,5 +112,4 @@ public class Asignacion {
 //		+ "\nPromedio: " + ((promediarNotas() != null) ? promediarNotas() : "-") + "\nEstado: "
 //		+ estadoMateria(notas) + "\n" + validadorNotas;
 //	}
-
 }

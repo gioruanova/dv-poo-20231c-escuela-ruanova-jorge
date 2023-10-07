@@ -3,12 +3,13 @@ package domain;
 import java.util.Arrays;
 
 /**
- * @MEJORAS Se creó el atributo nombre para el objeto
+ * @MEJORAS Se creó el atributo nombre para el objeto escuela
  */
 public class Escuela {
 
 	// ATRIBUTOS-------------------------------------------
 	private static final int CANTIDAD_ASIGNACIONES_DEFAULT = 6;
+
 	private String nombreEscuela;
 	private Asignacion[] asignaciones;
 
@@ -35,7 +36,6 @@ public class Escuela {
 			}
 			i++;
 		}
-
 		if (i >= asignaciones.length) {
 			System.out.println("Maximo de asignaciones alcanzadas");
 		}
@@ -58,5 +58,4 @@ public class Escuela {
 		return ((nombreEscuela != null) ? "Escuela [nombreEscuela=" + nombreEscuela : "---") + ", asignaciones="
 				+ Arrays.toString(asignaciones) + "]";
 	}
-
 }

@@ -18,5 +18,4 @@ public class Notas {
 	public String toString() {
 		return " " + tipoNota + ": " + valorNota;
 	}
-
 }

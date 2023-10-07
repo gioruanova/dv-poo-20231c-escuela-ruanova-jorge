@@ -1,6 +1,7 @@
 package domain;
 
 public class Alumno {
+
 	// ATRIBUTOS-------------------------------------------
 	private String nombre;
 	private int edad;
@@ -14,5 +15,4 @@ public class Alumno {
 	public String toString() {
 		return nombre + " (" + edad + " años)";
 	}
-
 }
