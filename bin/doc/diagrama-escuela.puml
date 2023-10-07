@@ -1,42 +1,58 @@
 @startuml
 
+Title Diagrama Escuela y Asignaciones
+
 class Escuela{
-	 int CANTIDAD_ASIGNACIONES_DEFAULT
-	 String nombreEscuela
-	 Asignacion[] asignaciones
+	 -int CANTIDAD_ASIGNACIONES_DEFAULT
+	 -String nombreEscuela
+	 -Asignacion[] asignaciones
 	 	 
-	 agregarAsignacion()
-	 mostrarAsignaciones()
+	 +agregarAsignacion()
+	 +mostrarAsignaciones()
 }
 
 
 class Asignacion{
-	 Materia materia
-	 Alumno alumno
-	 double primerParcial
-	 double segundoParcial
-	 double trabajoPractico
-	 estadoMateria()
-	 mostrarAlumno(
-	 promediarNotas()
+	 -Materia materia
+	 -Alumno alumno
+	 -Notas[] notas
+
+	 +asignarNota()
+	 +calcularPromedio()
+	 +estadoMateria()
+	 +mostrarNotas()
+}
+
+class Notas{
+	-Double valorNota
+	-String tipoNota
+	
+	+mostrarValorNota
+	+mostrarNotas
 }
 
 
 class Alumno{
-	String nombre
-	int edad
+	-String nombre
+	-int edad
+	
+	+mostrarAlumno()
 }
 
 
 class Materia{
-	String nombreMateria
-	String cuantrimestre
+	-String nombreMateria
+	-String cuantrimestre
+	
+	+mostrarMateria()
 }
 
 
 Escuela -- Asignacion
-Asignacion -- Materia
+Asignacion -left- Materia
 Asignacion -- Alumno
+Materia -left- Notas
+
 
 
 
