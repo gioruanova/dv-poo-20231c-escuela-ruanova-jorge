@@ -104,6 +104,7 @@ public class TestEscuela {
 		// --------------------------------------------------------------------------------------------------------------
 		// DETALLE ASIGNACIONES ESCUELA 1
 		escuela1.mostrarAsignaciones();
+			
 
 	}
 }

@@ -5,7 +5,6 @@ public class Notas {
 	private String tipoNota;
 
 	public Notas(Double valorNota, String tipoNota) {
-		super();
 		this.valorNota = valorNota;
 		this.tipoNota = tipoNota;
 	}
