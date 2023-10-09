@@ -1,6 +1,6 @@
 @startuml
 
-Title Diagrama Escuela y Asignaciones
+Title Diagrama: Escuela y Asignaciones
 
 class Escuela{
 	 -int CANTIDAD_ASIGNACIONES_DEFAULT
