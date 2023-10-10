@@ -29,7 +29,7 @@ public class Asignacion {
 
 	private Materia materia;
 	private Alumno alumno;
-	private Notas[] notas;
+	private Nota[] notas;
 
 	// Atributo adicional para mejorar programa
 	// private String validadorNotas = "";
@@ -37,12 +37,12 @@ public class Asignacion {
 	public Asignacion(Materia materia, Alumno alumno) {
 		this.materia = materia;
 		this.alumno = alumno;
-		this.notas = new Notas[CANTIDAD_NOTAS_DEFAULT];
+		this.notas = new Nota[CANTIDAD_NOTAS_DEFAULT];
 	}
 
 	// METODOS-------------------------------------------
 	// Asignar notas a materia
-	public void asginarNotas(Notas[] notas) {
+	public void asginarNotas(Nota[] notas) {
 		for (int i = 0; i < notas.length; i++) {
 			if (notas[i] != null) {
 				this.notas[i] = notas[i];
@@ -60,7 +60,7 @@ public class Asignacion {
 	public Double promediarNotas() {
 		Double suma = 0.0;
 		int contadorNotasValidas = 0;
-		for (Notas nota : notas) {
+		for (Nota nota : notas) {
 			if (nota != null && nota.getValorNota() != null) {
 				suma += nota.getValorNota();
 				contadorNotasValidas++;
@@ -78,12 +78,12 @@ public class Asignacion {
 	}
 
 	// Estado materia
-	public String estadoMateria(Notas[] notas) {
-		Double promedio = promediarNotas();
-		if (promedio == null) {
+	public String estadoMateria(Nota[] notas) {
+
+		if (promediarNotas() == null) {
 			return "Notas no disponibles";
 		} else {
-			return promedio >= 6.0 ? "APROBADO" : "REPROBADO";
+			return promediarNotas() >= 6.0 ? "APROBADO" : "REPROBADO";
 		}
 	}
 

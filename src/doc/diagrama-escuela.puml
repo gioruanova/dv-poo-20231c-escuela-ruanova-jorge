@@ -15,7 +15,7 @@ class Escuela{
 class Asignacion{
 	 -Materia materia
 	 -Alumno alumno
-	 -Notas[] notas
+	 -Nota[] notas
 
 	 +asignarNota()
 	 +calcularPromedio()
@@ -23,7 +23,7 @@ class Asignacion{
 	 +mostrarNotas()
 }
 
-class Notas{
+class Nota{
 	-Double valorNota
 	-String tipoNota
 	
@@ -48,10 +48,11 @@ class Materia{
 }
 
 
-Escuela -- Asignacion
-Asignacion -left- Materia
-Asignacion -- Alumno
-Materia -left- Notas
+Escuela "1" --> "*" Asignacion : Tiene muchas
+Asignacion "*" -right-> "1" Materia : Tiene una
+Asignacion "*" -left-> "1" Alumno : Tiene uno
+Asignacion "1" --> "*" Nota : Tiene muchas
+Nota "*" -right-> "1" Materia : Pertenece a
 
 
 

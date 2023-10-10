@@ -1,10 +1,10 @@
 package domain;
 
-public class Notas {
+public class Nota {
 	private Double valorNota;
 	private String tipoNota;
 
-	public Notas(Double valorNota, String tipoNota) {
+	public Nota(Double valorNota, String tipoNota) {
 		this.valorNota = valorNota;
 		this.tipoNota = tipoNota;
 	}
