@@ -3,9 +3,10 @@
 Title Diagrama: Escuela y Asignaciones
 
 class Escuela{
-	 -int CANTIDAD_ASIGNACIONES_DEFAULT
-	 -String nombreEscuela
-	 -Asignacion[] asignaciones
+	 CANTIDAD_ASIGNACIONES_DEFAULT : int
+	 
+	 -nombreEscuela : String
+	 -asignaciones : Asignacion[]
 	 	 
 	 +agregarAsignacion()
 	 +mostrarAsignaciones()
@@ -13,46 +14,43 @@ class Escuela{
 
 
 class Asignacion{
+	 -CANTIDAD_NOTAS_DEFAULT : int
+	 
 	 -Materia materia
-	 -Alumno alumno
-	 -Nota[] notas
+	 -alumno : Alumno
+	 -notas : Nota[]
 
-	 +asignarNota()
-	 +calcularPromedio()
-	 +estadoMateria()
-	 +mostrarNotas()
+	 +asignarNotas(Nota[] notas)
+	 +promediarNotas() : Double
+	 +estadoMateria(Nota[] notas) : String
+	 +mostrarNotas() : String
 }
 
 class Nota{
-	-Double valorNota
-	-String tipoNota
-	
-	+mostrarValorNota
-	+mostrarNotas
+	-valorNota : Double 
+	-tipoNota : String
 }
 
 
 class Alumno{
-	-String nombre
-	-int edad
-	
-	+mostrarAlumno()
+	-nombre : String
+	-edad : int
 }
 
 
 class Materia{
-	-String nombreMateria
-	-String cuantrimestre
-	
-	+mostrarMateria()
+	-nombreMateria : String
+	-cuantrimestre : String 
 }
 
 
-Escuela "1" --> "*" Asignacion : Tiene muchas
-Asignacion "*" -right-> "1" Materia : Tiene una
-Asignacion "*" -left-> "1" Alumno : Tiene uno
-Asignacion "1" --> "*" Nota : Tiene muchas
-Nota "*" -right-> "1" Materia : Pertenece a
+Escuela "1" -right-> "1..*" Asignacion : Tiene una o muchas
+Asignacion "1" -right-> "1..*" Alumno : Tiene uno
+Asignacion "1" -down-> "1..*" Materia : Tiene una
+Nota "1..*" -right-> "1" Materia : Pertenece a
+Asignacion "1" --> "1..*" Nota : Tiene una o muchas
+Alumno "1"-->"1..*" Materia  : Posee 1 o varias
+
 
 
 

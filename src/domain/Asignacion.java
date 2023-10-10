@@ -34,6 +34,12 @@ public class Asignacion {
 	// Atributo adicional para mejorar programa
 	// private String validadorNotas = "";
 
+	/**
+	 * Mejora:<br>
+	 * El constructor no debe ser directo y debiera tener un metodo para validar que
+	 * la asignacion Alumno/Materia no se repita o tener un diferenciador (ej: ID)
+	 * para diferenciar posibles asignacioens repetidas
+	 */
 	public Asignacion(Materia materia, Alumno alumno) {
 		this.materia = materia;
 		this.alumno = alumno;
@@ -41,8 +47,21 @@ public class Asignacion {
 	}
 
 	// METODOS-------------------------------------------
+
+	public Alumno getAlumno() {
+		return alumno;
+	}
+
+	public Materia getMateria() {
+		return materia;
+	}
+
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+
 	// Asignar notas a materia
-	public void asginarNotas(Nota[] notas) {
+	public void asignarNotas(Nota[] notas) {
 		for (int i = 0; i < notas.length; i++) {
 			if (notas[i] != null) {
 				this.notas[i] = notas[i];
@@ -78,7 +97,7 @@ public class Asignacion {
 	}
 
 	// Estado materia
-	public String estadoMateria(Nota[] notas) {
+	public String estadoMateria() {
 
 		if (promediarNotas() == null) {
 			return "Notas no disponibles";
@@ -100,9 +119,8 @@ public class Asignacion {
 
 	@Override
 	public String toString() {
-		return "\n" + "Asignacion: " + "\nAlumno: " + alumno + "\nMateria: " + materia + "\nNotas: " + mostrarNotas()
-				+ "\nPromedio: " + ((promediarNotas() != null) ? promediarNotas() : "-") + "\nEstado: "
-				+ estadoMateria(notas);
+		return "\nAlumno: " + alumno + "\nMateria: " + materia + "\nNotas: " + mostrarNotas() + "\nPromedio: "
+				+ promediarNotas().toString().substring(0, 3) + "\nEstado: " + estadoMateria();
 	}
 
 //	Metodo con mejora de validacion agregada

@@ -11,8 +11,12 @@ public class Alumno {
 		this.edad = edad;
 	}
 
+	public int getEdad() {
+		return edad;
+	}
+
 	@Override
 	public String toString() {
-		return nombre + " (" + edad + " años)";
+		return nombre;
 	}
 }

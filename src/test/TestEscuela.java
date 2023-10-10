@@ -50,7 +50,7 @@ public class TestEscuela {
 		Nota[] notasAlumno1Materia1 = { new Nota(5.5, "Parcial uno"), new Nota(8.5, "Parcial dos"),
 				new Nota(9.0, "TP") };
 
-		asignacion1.asginarNotas(notasAlumno1Materia1);
+		asignacion1.asignarNotas(notasAlumno1Materia1);
 		escuela1.agregarAsignacion(asignacion1);
 
 		// Materia 2
@@ -58,7 +58,7 @@ public class TestEscuela {
 		Nota[] notasAlumno1Materia3 = { new Nota(4.0, "Parcial uno"), new Nota(7.0, "Parcial dos"),
 				new Nota(6.0, "TP") };
 
-		asignacion2.asginarNotas(notasAlumno1Materia3);
+		asignacion2.asignarNotas(notasAlumno1Materia3);
 		escuela1.agregarAsignacion(asignacion2);
 
 		// --------------------------------------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public class TestEscuela {
 		Nota[] notasAlumno2Materia1 = { new Nota(6.5, "Parcial uno"), new Nota(7.0, "Parcial dos"),
 				new Nota(5.5, "TP") };
 
-		asignacion3.asginarNotas(notasAlumno2Materia1);
+		asignacion3.asignarNotas(notasAlumno2Materia1);
 		escuela1.agregarAsignacion(asignacion3);
 
 		// Materia 2
@@ -78,7 +78,7 @@ public class TestEscuela {
 		Nota[] notasAlumno2Materia2 = { new Nota(4.0, "Parcial uno"), new Nota(9.0, "Parcial dos"),
 				new Nota(6.0, "TP") };
 
-		asignacion4.asginarNotas(notasAlumno2Materia2);
+		asignacion4.asignarNotas(notasAlumno2Materia2);
 		escuela1.agregarAsignacion(asignacion4);
 
 		// --------------------------------------------------------------------------------------------------------------
@@ -90,7 +90,7 @@ public class TestEscuela {
 		Nota[] notasAlumno3Materia1 = { new Nota(6.0, "Parcial uno"), new Nota(9.0, "Parcial dos"),
 				new Nota(9.0, "TP") };
 
-		asignacion5.asginarNotas(notasAlumno3Materia1);
+		asignacion5.asignarNotas(notasAlumno3Materia1);
 		escuela1.agregarAsignacion(asignacion5);
 
 		// Materia 2
@@ -98,12 +98,16 @@ public class TestEscuela {
 		Nota[] notasAlumno3Materia2 = { new Nota(6.6, "Parcial uno"), new Nota(6.0, "Parcial dos"),
 				new Nota(0.0, "TP") };
 
-		asignacion6.asginarNotas(notasAlumno3Materia2);
+		asignacion6.asignarNotas(notasAlumno3Materia2);
 		escuela1.agregarAsignacion(asignacion6);
 
 		// --------------------------------------------------------------------------------------------------------------
 		// DETALLE ASIGNACIONES ESCUELA 1
 		escuela1.mostrarAsignaciones();
+
+		// Metodo adicional Escuela
+//		System.out.println(escuela1.resumenAprobados());
+//		System.out.println(escuela1.resumenReprobados());
 
 	}
 }
