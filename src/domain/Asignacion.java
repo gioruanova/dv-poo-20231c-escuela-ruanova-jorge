@@ -79,9 +79,9 @@ public class Asignacion {
 	public Double promediarNotas() {
 		Double suma = 0.0;
 		int contadorNotasValidas = 0;
-		for (Nota nota : notas) {
-			if (nota != null && nota.getValorNota() != null) {
-				suma += nota.getValorNota();
+		for (Nota notaItem : notas) {
+			if (notaItem != null && notaItem.getValorNota() != null) {
+				suma += notaItem.getValorNota();
 				contadorNotasValidas++;
 			}
 			// Condicion validadora adicional para mejorar programa

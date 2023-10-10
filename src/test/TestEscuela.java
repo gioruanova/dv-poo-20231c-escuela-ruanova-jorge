@@ -106,8 +106,8 @@ public class TestEscuela {
 		escuela1.mostrarAsignaciones();
 
 		// Metodo adicional Escuela
-//		System.out.println(escuela1.resumenAprobados());
-//		System.out.println(escuela1.resumenReprobados());
+		System.out.println(escuela1.resumenAprobados());
+		System.out.println(escuela1.resumenReprobados());
 
 	}
 }

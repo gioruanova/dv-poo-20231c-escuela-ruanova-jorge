@@ -64,36 +64,36 @@ public class Escuela {
 	 * Se agrega un metodo adicional para tener una vision adicional
 	 */
 	// Metodo adicional privado resumen aprobaciones
-//	private String resumenAprobaciones(String estadoAprobacion) {
-//		int aprobados = 0;
-//		String listaAprobados = "";
-//
-//		for (Asignacion asignacion : asignaciones) {
-//			if (asignacion != null) {
-//				if (asignacion.estadoMateria().equalsIgnoreCase(estadoAprobacion)) {
-//					aprobados++;
-//					listaAprobados += "-" + asignacion.getAlumno() + ": " + asignacion.getMateria().getNombre()
-//							+ "\n Cuatrimestre: " + asignacion.getMateria().getCuatrimestre() + "\n Promedio:  "
-//							+ asignacion.promediarNotas().toString().substring(0, 3) + "\n";
-//
-//				}
-//			}
-//		}
-//		return "\nAlumnos" + " " + estadoAprobacion + "s: " + aprobados + " (%"
-//				+ String.format("%.2f", ((double) aprobados / asignaciones.length) * 100.0) + ") " + "\n"
-//				+ listaAprobados;
-//
-//	}
+	private String resumenAprobaciones(String estadoAprobacion) {
+		int aprobados = 0;
+		String listaAprobados = "";
+
+		for (Asignacion asigItem : asignaciones) {
+			if (asigItem != null) {
+				if (asigItem.estadoMateria().equalsIgnoreCase(estadoAprobacion)) {
+					aprobados++;
+					listaAprobados += "-" + asigItem.getAlumno() + ": " + asigItem.getMateria().getNombre()
+							+ "\n Cuatrimestre: " + asigItem.getMateria().getCuatrimestre() + "\n Promedio:  "
+							+ asigItem.promediarNotas().toString().substring(0, 3) + "\n";
+
+				}
+			}
+		}
+		return "\nAlumnos" + " " + estadoAprobacion + "s: " + aprobados + " (%"
+				+ String.format("%.2f", ((double) aprobados / asignaciones.length) * 100.0) + ") " + "\n"
+				+ listaAprobados;
+
+	}
 
 	// Metodo adicional listado aprobados
-//	public String resumenAprobados() {
-//		return resumenAprobaciones("Aprobado");
-//	}
+	public String resumenAprobados() {
+		return resumenAprobaciones("Aprobado");
+	}
 
 	// Metodo adicional listado reprobados
-//	public String resumenReprobados() {
-//		return resumenAprobaciones("Reprobado");
-//	}
+	public String resumenReprobados() {
+		return resumenAprobaciones("Reprobado");
+	}
 
 	@Override
 	public String toString() {
