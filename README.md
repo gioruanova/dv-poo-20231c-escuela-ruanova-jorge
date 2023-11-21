@@ -1,7 +1,14 @@
-# dv-poo-20231c-escuela-ruanova-jorge
+﻿﻿## 📃 TP JAVA 1- Ejercitacion clases
 
-##
-Programa realizado en Java para asignacion y control de materias y alumnos
+## 💻 Devs:
+- [@GiorgioRuanova](https://github.com/gioruanova)
+
+## 🚀 Desarrollo:
+Trabajo practico 1 realizado en JAVA
+
+## 🛠 Skills:
+JAVA, POO
 
 
-Se presenta dicho programa acorde a consigna + mejoras recomendadas desde desarrollo
+## ReadMe:
+Readme document created using [Readme SO](https://readme.so/es). Credits by [Katherine Oelsner](https://github.com/octokatherine).
