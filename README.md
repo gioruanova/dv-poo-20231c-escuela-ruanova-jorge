@@ -7,7 +7,12 @@
 Trabajo practico 1 realizado en JAVA
 
 ## 🛠 Skills:
-JAVA, POO
+[![My Skills](https://skillicons.dev/icons?i=java)](https://skillicons.dev)
+
+## 🛠 Config:
+Proyecto hecho en:
+
+[![My Skills](https://skillicons.dev/icons?i=eclipse)](https://skillicons.dev)
 
 
 ## ReadMe:
